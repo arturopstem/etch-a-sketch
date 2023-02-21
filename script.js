@@ -14,6 +14,15 @@ function createCells(row, numberOfCells) {
     row.appendChild(cell);
   }
 }
+function addHoveringEffect() {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", (e) => {
+      e.target.style.setProperty("background-color", "black");
+    });
+  });
+}
 
 const grid = document.querySelector(".grid");
 createRows(16);
+addHoveringEffect();
