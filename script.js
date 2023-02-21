@@ -1,4 +1,4 @@
-function createRows(numberOfRows) {
+function createGrid(numberOfRows) {
   for (let i = 0; i < numberOfRows; i++) {
     const row = document.createElement("div");
     row.classList.add("row");
@@ -14,6 +14,7 @@ function createCells(row, numberOfCells) {
     row.appendChild(cell);
   }
 }
+
 function addHoveringEffect() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
@@ -24,5 +25,5 @@ function addHoveringEffect() {
 }
 
 const grid = document.querySelector(".grid");
-createRows(16);
+createGrid(16);
 addHoveringEffect();
