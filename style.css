@@ -11,3 +11,28 @@ html {
   margin: 0;
   padding: 0;
 }
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  width: 90vmin;
+  aspect-ratio: 1/1;
+  background-color: white;
+  gap: 1px;
+  border: white solid 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 1 0 0;
+  display: flex;
+  gap: 1px;
+}
+.cell {
+  flex: 1 0 0;
+}
