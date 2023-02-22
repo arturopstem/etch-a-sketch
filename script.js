@@ -19,9 +19,36 @@ function addHoveringEffect() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
     cell.addEventListener("mouseover", (e) => {
-      e.target.style.setProperty("background-color", "black");
+      let color = getColor(e.target);
+      e.target.style.setProperty("background-color", color);
     });
   });
+}
+
+function getColor(cell) {
+  const cellColor = cell.style.getPropertyValue("background-color");
+  if (!cellColor) {
+    return newRandomColor(cell);
+  } else {
+    return darkenColor(cell);
+  }
+}
+
+function newRandomColor(cell) {
+  const hue = Math.floor(Math.random() * 360);
+  cell.style.setProperty("--hue", hue);
+  cell.style.setProperty("--saturation", 100);
+  cell.style.setProperty("--lightness", 50);
+  return `hsl(${hue}, 100%, 50%)`;
+}
+
+function darkenColor(cell) {
+  const hue = cell.style.getPropertyValue("--hue");
+  let lightness = cell.style.getPropertyValue("--lightness");
+  if (lightness === 0) return;
+  lightness -= 5;
+  cell.style.setProperty("--lightness", lightness);
+  return `hsl(${hue}, 100%, ${lightness}%)`;
 }
 
 function newGrid() {
