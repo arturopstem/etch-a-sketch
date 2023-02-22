@@ -53,9 +53,12 @@ function darkenColor(cell) {
 
 function newGrid() {
   let newSquaresPerSide = prompt(
-    "Number of squares per side: ",
+    "Number of squares per side (max 100): ",
     squaresPerSide
   );
+  if (parseInt(newSquaresPerSide) > 100) {
+    alert("I can't place more than 100 squares per side. Please try again");
+  }
   if (newSquaresPerSide && parseInt(newSquaresPerSide) <= 100) {
     squaresPerSide = parseInt(newSquaresPerSide);
     grid.innerHTML = "";
