@@ -24,6 +24,23 @@ function addHoveringEffect() {
   });
 }
 
+function newGrid() {
+  let newSquaresPerSide = prompt(
+    "Number of squares per side: ",
+    squaresPerSide
+  );
+  if (newSquaresPerSide && parseInt(newSquaresPerSide) <= 100) {
+    squaresPerSide = parseInt(newSquaresPerSide);
+    grid.innerHTML = "";
+    createGrid(squaresPerSide);
+    addHoveringEffect();
+  }
+}
+
+const newGridButton = document.querySelector("#newGridButton");
 const grid = document.querySelector(".grid");
-createGrid(16);
+let squaresPerSide = 16;
+
+createGrid(squaresPerSide);
 addHoveringEffect();
+newGridButton.addEventListener("click", newGrid);
