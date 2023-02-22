@@ -29,9 +29,9 @@ main {
 #newGridButton {
   font-size: 2rem;
   font-weight: bold;
-  min-width: min-content;
-  width: 25vw;
-  height: 5vh;
+  min-width: 7ch;
+  width: 20vw;
+  height: 3rem;
   align-self: center;
   cursor: pointer;
   background-color: hsl(56, 100%, 50%);
